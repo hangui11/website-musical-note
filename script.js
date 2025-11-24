@@ -17,6 +17,9 @@ let gridsToShow = [];
 let currentGridIndex = 0;
 let currentGridLabelIndex = 0;
 
+let game2_grid_time = 25000; // Total time per grid in ms
+let game2_grid_image = 3000; // Time per image highlight in ms
+
 const music = document.getElementById('bg-music');
 let music_playing = true;
 
@@ -191,7 +194,7 @@ function startGame2() {
     currentGridIndex = 0;
     
     updateGridCycle();
-    gridTimer = setInterval(updateGridCycle, 5000);
+    gridTimer = setInterval(updateGridCycle, game2_grid_time);
 }
 
 function showNextGrid() {
@@ -243,7 +246,7 @@ function updateGridCycle() {
         currentGridLabelIndex = 0;
         
         highlightNextGridLabel();
-        gridLabelTimer = setInterval(highlightNextGridLabel, 500); 
+        gridLabelTimer = setInterval(highlightNextGridLabel, game2_grid_image); 
     }
 }
 
