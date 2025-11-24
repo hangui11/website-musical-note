@@ -237,7 +237,7 @@ function highlightNextGridLabel() {
 function updateGridCycle() {
     // ... (Your existing updateGridCycle logic) ...
     clearInterval(gridLabelTimer);
-    
+        
     if (showNextGrid()) { 
         document.querySelectorAll('#note-grid .grid-item').forEach(item => {
             item.classList.remove('highlight');

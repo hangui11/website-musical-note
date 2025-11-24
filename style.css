@@ -20,7 +20,7 @@ body {
 }
 
 .page {
-    /* position: flex; */
+    position: flex;
     margin-top: 30px;
     top: 0;
     left: 0;
@@ -46,7 +46,7 @@ h1 {
 h2 {
     font-size: 32px;
     color: #555;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 button {
@@ -96,6 +96,7 @@ input[type="number"] {
 #countdown-page h1 {
     font-size: 100px;
     color: #dc3545;
+    padding-top: 50px;
 }
 
 /* Game 1 Styling */
@@ -103,7 +104,7 @@ input[type="number"] {
     width: 250px;
     height: 250px;
     object-fit: contain;
-    margin: 20px 0;
+    /* margin: 20px 0; */
 }
 
 .result-label {
@@ -111,7 +112,7 @@ input[type="number"] {
     font-weight: bold;
     color: #333;
     min-height: 40px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 /* Game 2 Styling */
