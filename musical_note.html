@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musical Note Games</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./images/music-notes.png">
+</head>
+<body>
+
+    <audio id="bg-music" autoplay loop>
+        <source src="./background_mp3_cut.mp3" type="audio/mpeg">
+    </audio>
+
+    
+
+    <div id="app-container">
+
+        <button id="mute-btn" class="voice-btn" onclick="toggleMute()">
+            🔊
+        </button>
+
+        <div id="main-menu" class="page active">
+            <h1>Game Launcher 🎼</h1>
+            <h2>Choose a game to play</h2>
+            <div class="button-container">
+                <button onclick="showPage('game1-config')">
+                    Game 1: Single Note
+                </button>
+                <button onclick="showPage('game2-config')">
+                    Game 2: Note Grid
+                </button>
+            </div>
+        </div>
+
+        <div id="game1-config" class="page">
+            <h2>Configuration for Game 1</h2>
+            <div class="config-row">
+                <label for="notes-input">Number of Notes:</label>
+                <input type="number" id="notes-input" value="5" min="1">
+            </div>
+            <div class="config-row">
+                <label for="seconds-input">Seconds per Note:</label>
+                <input type="number" id="seconds-input" value="4" min="3">
+            </div>
+            <button onclick="goToCountdown(1)">Start Game 1</button>
+            <button class="back-btn" onclick="showPage('main-menu')">Back to Menu</button>
+        </div>
+
+        <div id="game2-config" class="page">
+            <h2>Configuration for Game 2</h2>
+            <div class="config-row">
+                <label for="grids-input">Number of Grids (Rounds):</label>
+                <input type="number" id="grids-input" value="3" min="1">
+            </div>
+            <button onclick="goToCountdown(2)">Start Game 2</button>
+            <button class="back-btn" onclick="showPage('main-menu')">Back to Menu</button>
+        </div>
+        
+        <div id="countdown-page" class="page">
+            <h1 id="countdown-label">3</h1>
+        </div>
+
+        <div id="game1-game" class="page">
+            <h2>YOU CAN DO IT!</h2>
+            <img id="game1-image" src="" alt="Musical Note Image" class="note-image">
+            <div id="game1-note-label" class="result-label">Say the note name now!</div>
+            <button class="back-btn" onclick="resetGame(1)">Back to Config</button>
+        </div>
+        
+        <div id="game2-game" class="page">
+            <h2>YOU CAN DO IT!</h2>
+            <div id="note-grid" class="grid-layout">
+                </div>
+            <button class="back-btn" onclick="resetGame(2)">Back to Config</button>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
