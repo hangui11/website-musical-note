@@ -42,7 +42,7 @@
             </div>
             <div class="config-row">
                 <label for="seconds-input">Seconds per Note:</label>
-                <input type="number" id="seconds-input" value="4" min="3">
+                <input type="number" id="seconds-input" value="4" min="1">
             </div>
             <button onclick="goToCountdown(1)">Start Game 1</button>
             <button class="back-btn" onclick="showPage('main-menu')">Back to Menu</button>
@@ -53,6 +53,10 @@
             <div class="config-row">
                 <label for="grids-input">Number of Grids (Rounds):</label>
                 <input type="number" id="grids-input" value="3" min="1">
+            </div>
+            <div class="config-row">
+                <label for="grids-seconds">Seconds per Grid:</label>
+                <input type="number" id="grids-seconds" value="3" min="2">
             </div>
             <button onclick="goToCountdown(2)">Start Game 2</button>
             <button class="back-btn" onclick="showPage('main-menu')">Back to Menu</button>

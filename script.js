@@ -17,8 +17,8 @@ let gridsToShow = [];
 let currentGridIndex = 0;
 let currentGridLabelIndex = 0;
 
-let game2_grid_time = 25000; // Total time per grid in ms
-let game2_grid_image = 3000; // Time per image highlight in ms
+game2_grid_time = 0; // Total time per grid in ms
+game2_grid_image = 0; // Time per image highlight in ms
 
 const music = document.getElementById('bg-music');
 let music_playing = true;
@@ -97,19 +97,22 @@ function goToCountdown(gameType) {
             game1Notes = parseInt(document.getElementById('notes-input').value);
             game1Seconds = parseFloat(document.getElementById('seconds-input').value);
             
-            if (isNaN(game1Notes) || isNaN(game1Seconds) || game1Notes <= 0 || game1Seconds < 3) {
+            if (isNaN(game1Notes) || isNaN(game1Seconds) || game1Notes <= 0 || game1Seconds <= 0) {
                 throw new Error("Invalid input.");
             }
 
         } else {
             numGrids = parseInt(document.getElementById('grids-input').value);
-            if (isNaN(numGrids) || numGrids <= 0) {
+            game2_grid_time = parseFloat(document.getElementById('grids-seconds').value)*1000;
+            game2_grid_image = game2_grid_time / 8; // Time per image in ms
+            game2_grid_time = game2_grid_time + 500; // Extra 0.5s between grids
+            if (isNaN(numGrids) || numGrids <= 0 || isNaN(game2_grid_time) || game2_grid_time <= 0) {
                 throw new Error("Invalid input.");
             }
         }
     } catch (e) {
         console.error(e);
-        alert("Please enter valid positive numbers. Seconds must be at least 3.");
+        alert("Please enter valid positive numbers.");
         return;
     }
 
